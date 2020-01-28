@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AgentDashboardModule } from './agent-dashboard/agent-dashboard.module';
+import { SomeFeatureModule } from './some-feature/some-feature.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgentDashboardModule,
+    SomeFeatureModule,
+    AuthModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
