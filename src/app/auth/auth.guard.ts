@@ -12,17 +12,18 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      console.log('inside can activate');
       const url: string = state.url;
       console.log('url = ', url);
       return this.checkLogin(url);
       // `return true;
   }
 
-  /*canLoad(route: Route): boolean {
+  canLoad(route: Route): boolean {
     const url = `/${route.path}`;
     console.log('url = ', url);
     return this.checkLogin(url);
-  }*/
+  }
 
   checkLogin(url: string): boolean {
     if (this.authService.isLoggedIn) { return true; }

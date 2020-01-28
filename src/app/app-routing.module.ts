@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./agent-dashboard/agent-dashboard.module').then(mod => mod.AgentDashboardModule),
-    canLoad: [AuthGuardService]
+    canLoad: [AuthGuard]
   },
   {
     path: '',

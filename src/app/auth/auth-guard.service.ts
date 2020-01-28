@@ -10,6 +10,7 @@ export class AuthGuardService implements CanLoad {
   constructor(private authService: AuthService, private router: Router) { }
 
   canLoad(route: Route): boolean {
+    console.log('inside can load');
     const url = `/${route.path}`;
     console.log('url = ', url);
     return this.checkLogin(url);

@@ -14,12 +14,12 @@ import { AuthGuardService } from './auth/auth-guard.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AgentDashboardModule,
     SomeFeatureModule,
-    AuthModule
+    AuthModule,
+    AppRoutingModule,
   ],
-  providers: [AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
